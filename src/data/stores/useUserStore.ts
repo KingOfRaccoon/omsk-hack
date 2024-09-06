@@ -1,6 +1,6 @@
 import {Loading, Result} from "../../api/result.ts";
 import {User} from "../../domain/models/User.ts";
-import {createStore} from "zustand";
+import {create} from "zustand";
 import {AuthenticationData} from "../../domain/models/AuthenticationData.ts";
 import {userService} from "../services/UserService.ts";
 import {RegistrationData} from "../../domain/models/RegistrationData.ts";
@@ -12,7 +12,7 @@ interface UserStore {
     authenticationUserOnToken: (token: string) => void
 }
 
-const useUserStore = createStore<UserStore>()((set) => ({
+export const useUserStore = create<UserStore>()((set) => ({
     user: new Loading<User>(),
     authenticationUser: async (authenticationData: AuthenticationData) => {
         const user = await userService.authenticateUser(authenticationData);
