@@ -52,7 +52,7 @@ export default function GenMod5(props: GenModProps) {
             />
         </div>
 
-        <p className="fc-grey-20 my-1">Заклыдываем фундамент, строим каркас</p>
+        <p className="fc-grey-20 my-1">Закладываем фундамент, строим каркас</p>
 
     </div>
 }
