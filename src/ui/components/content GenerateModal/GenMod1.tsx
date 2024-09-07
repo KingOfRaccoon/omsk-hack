@@ -3,10 +3,9 @@ import image1 from "../../../assets/image_onb1.svg";
 import image2 from "../../../assets/image_onb2.svg";
 import image3 from "../../../assets/image_onb3.svg";
 import image4 from "../../../assets/image_onb4.svg";
-import {Swiper, SwiperRef, SwiperSlide} from "swiper/react";
+import {Swiper, SwiperSlide} from "swiper/react";
 import {EffectFade, Navigation, Pagination} from "swiper/modules";
 import 'swiper/swiper-bundle.css';
-import {useRef} from "react";
 
 export interface GenModProps {
     nextPage: () => void;
@@ -14,17 +13,14 @@ export interface GenModProps {
 
 export default function GenMod1(props: GenModProps) {
     const images = [image1, image2, image3, image4];
-    const slider = useRef<SwiperRef>(null);
-    return <div>
 
-        {/*из файла -1- */}
+    return <div>
         <div className="row">
             <h2>Как работает?</h2>
             <small className="fc-grey-50">Генерация из файла</small>
         </div>
 
         <Swiper slidesPerView={1}
-                ref={slider}
                 modules={[EffectFade, Pagination, Navigation]}
                 navigation={true}
                 pagination={{type: "bullets", }} aria-orientation={"horizontal"}>

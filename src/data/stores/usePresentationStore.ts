@@ -9,17 +9,20 @@ interface PresentationStore {
     presentations: Result<Presentation[]>,
     newPresentation: Result<PresentationData>,
     newPresentationFile: Result<Presentation>,
+    userFile: File | null,
     loadText: (text: string, token: string) => void,
     loadFile: (file: File, token: string) => void,
     loadEdited: (presentationData: PresentationData, token: string) => void,
     getPresentationsUser: (token: string) => void,
-    getFileOnPresentation: (idPresentation: number) => void
+    getFileOnPresentation: (idPresentation: number) => void,
+    setUserFile: (file: File) => void,
 }
 
 export const usePresentationStore = create<PresentationStore>()((set) => ({
     presentations: new Loading(),
     newPresentation: new Loading(),
     newPresentationFile: new Loading(),
+    userFile: null,
     loadText: async (text: string) => {
         set(() => ({ newPresentation: new Loading()}))
         const presentation = await presentationService.loadText(text, useTokenStore(state => state.getToken)());
@@ -50,4 +53,8 @@ export const usePresentationStore = create<PresentationStore>()((set) => ({
 
         set(() => ({ newPresentationFile: presentation }))
     },
+
+    setUserFile: (file: File) => {
+        set(() => ({ userFile: file}))
+    }
 }))

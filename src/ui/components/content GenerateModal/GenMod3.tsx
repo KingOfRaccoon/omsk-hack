@@ -1,6 +1,6 @@
 import {CircularProgressbar} from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 
 interface GenModProps {
     nextPage: () => void;
@@ -8,16 +8,23 @@ interface GenModProps {
 }
 
 export default function GenMod3(props: GenModProps) {
-
-    const percentage = 100;
+    const [percentage, setPercentage] = useState(0);
 
     useEffect(() => {
-        if (percentage == 100 && props.isCurrentPage) {
-            setTimeout(() => {
-                props.nextPage()
-            }, 1000);
+        if (props.isCurrentPage) {
+            if (percentage >= 100) {
+                setTimeout(() => {
+                    props.nextPage()
+                }, 1000);
+            } else {
+                setTimeout(() => {
+                    const newValue = percentage + Math.floor(Math.random() * 14) + 1
+                    setPercentage(newValue > 100 ? 100: newValue)
+                }, 300)
+            }
         }
     }, [percentage, props.isCurrentPage]);
+
     return <div>
 
         {/*из файла -3- */}
@@ -27,13 +34,12 @@ export default function GenMod3(props: GenModProps) {
         </div>
 
         <div className="container mt-5" style={{width: 200, height: 200}} onClick={props.nextPage}>
-            <CircularProgressbar text={"66%"} value={66} strokeWidth={2}
+            <CircularProgressbar text={`${percentage}%`} value={percentage} maxValue={100} strokeWidth={2}
                                  styles={{
                                      root: {},
                                      path: {
                                          stroke: '#5269FF',
                                          strokeLinecap: 'round',
-                                         transition: 'stroke-dashoffset 0.5s ease 1s',
                                      },
                                      trail: {
                                          stroke: 'rgba(0,0,0,0.1)',
