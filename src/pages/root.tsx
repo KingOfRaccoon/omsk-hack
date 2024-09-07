@@ -11,10 +11,22 @@ import create from "../assets/edit_circle.svg";
 import chartPie from "../assets/pie-chart.svg";
 import clock from "../assets/clock_circle.svg";
 import file from "../assets/textСlean.svg";
+import link from "../assets/link.svg";
+import plus from "../assets/plus.svg";
+import left from "../assets/left.svg";
+import right from "../assets/right.svg";
+
+// import Swiper JS
+// import Swiper from 'swiper';
+
+// import Swiper styles
+// import 'swiper/css';
+// import '../../src/ui/components/swiper.js'
 
 const HeaderRoot = () => {
     return (
         <div className="container-fluid hstack gap-3">
+
             {/*LEFT PANEL*/}
             <div className="col-xxl-3 col-xl-3 col-sm-3 m-0 vstack gap-3">
 
@@ -57,13 +69,29 @@ const HeaderRoot = () => {
                         <h4>Недавние</h4>
                     </div>
                 </div>
+
+                {/*TEAM ACTIVITies*/}
+                <div className="container vstack gap-2 p-3 bg-white br-36">
+                    <div className="container menu-item hstack gap-3 br-36 px-2 py-2">
+                        <div className="icon-box ">
+                            <img src={plus} alt=""/>
+                        </div>
+                        <h4>Создать команду</h4>
+                    </div>
+                    <div className="container menu-item hstack gap-3 br-36 px-2 py-2">
+                        <div className="icon-box ">
+                            <img src={link} alt=""/>
+                        </div>
+                        <h4>Присоединиться к команде</h4>
+                    </div>
+                </div>
             </div>
 
             {/*RIGHT PANEL*/}
             <div className="col-xxl-9 col-xl-9 col-sm-9 m-0 vstack gap-3">
 
                 {/*TOP BUTTONs*/}
-                <div className="container hstack gap-3">
+                <div className="container hstack gap-3 p-0">
 
                     <button className="menu-button container p-3 bg-white br-36 align-items-center">
                         <div className="icon-box">
@@ -71,7 +99,7 @@ const HeaderRoot = () => {
                         </div>
                         <div className="align-items-center align-content-start text-start">
                             <h3>Сгенерировать</h3>
-                            <small className="fc-grey">из файла pdf/docx</small>
+                            <small className="fc-grey-50">из файла pdf/docx</small>
                         </div>
                     </button>
 
@@ -81,7 +109,7 @@ const HeaderRoot = () => {
                         </div>
                         <div className="align-items-center align-content-start text-start">
                             <h3>Создать</h3>
-                            <small className="fc-grey">из текста</small>
+                            <small className="fc-grey-50">из текста</small>
                         </div>
                     </button>
 
@@ -91,17 +119,63 @@ const HeaderRoot = () => {
                         </div>
                         <div className="align-items-center align-content-start text-start">
                             <h3>Все шаблоны</h3>
-                            <small className="fc-grey">выбрать и использовать</small>
+                            <small className="fc-grey-50">выбрать и использовать</small>
                         </div>
                     </button>
 
                 </div>
 
-                <div className="container p-3 bg-white br-36">
-                    <p>Android-разработчик</p>
+                {/* MAIN */}
+                {/*НЕТ ПРЕЗ*/}
+                <div className="container p-3 pe-2 bg-white br-36">
+                    <div className="container text-start">
+                        <h3>Мои презентации</h3>
+                    </div>
+                    <h3 className="fc-grey-20 mt-4">У вас еще нет презентаций :(</h3>
+                    <button className="align-items-center hstack m-0 p-3 bg-grey-30 br-36 align-items-center mx-auto mt-3 mb-2">
+                        <div className="text-start">
+                            <h3 className="fc-blue">Создать</h3>
+                        </div>
+                        <div className="icon-box ms-2">
+                            <img src={plus} alt=""/>
+                        </div>
+                    </button>
+                </div>
+
+                {/*ЕСТЬ ПРЕЗы*/}
+                <div className="container p-3 pe-2 bg-white br-36">
+                    <div className="container hstack">
+                        <h3>Мои презентации</h3>
+                        <a><small className="fc-blue ms-3">Все</small></a>
+                        <div className="icon-box ms-auto">
+                            <img src={left} alt=""/>
+                        </div>
+                        <div className="icon-box ms-3">
+                            <img src={right} alt=""/>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div className="swiper">
+                            <div className="swiper-wrapper">
+                                <div className="swiper-slide">Slide 1</div>
+                                <div className="swiper-slide">Slide 2</div>
+                                <div className="swiper-slide">Slide 3</div>
+                                ...
+                            </div>
+                            <div className="swiper-pagination"></div>
+
+                            <div className="swiper-button-prev"></div>
+                            <div className="swiper-button-next"></div>
+
+                            <div className="swiper-scrollbar"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>);
+        </div>
+    );
+
 }
 
 const Root = () => {
