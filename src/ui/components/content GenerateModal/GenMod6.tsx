@@ -50,25 +50,25 @@ export default function GenMod6(props: GenModProps) {
                 className={selectedButton == 1 ? "vstack m-0 p-1 br-12 bg-fio" : "vstack m-0 p-1 br-12 bg-grey-3"}
                 id="tbg-radio-1" value={1} onClick={() => handleToggle(1)}>
                     <img src={temp1} alt=""/>
-                    <h4 className={selectedButton == 1 ? "fc-white fc-fio mx-auto my-1" : "fc-fio fc-fio mx-auto my-1"}>Департамент №1</h4>
+                    <h4 className={selectedButton == 1 ? "fc-white fc-fio mx-auto my-1" : "fc-black mx-auto my-1"}>Департамент №1</h4>
             </button>
             <button
                 className={selectedButton == 2 ? "vstack m-0 p-1 br-12 bg-fio" : "vstack m-0 p-1 br-12 bg-grey-3"}
                 id="tbg-radio-2" value={2} onClick={() => handleToggle(2)}>
                     <img src={temp2} alt=""/>
-                    <h4 className={selectedButton == 2 ? "fc-white fc-fio mx-auto my-1" : "fc-fio fc-fio mx-auto my-1"}>Департамент №2</h4>
+                    <h4 className={selectedButton == 2 ? "fc-white fc-fio mx-auto my-1" : "fc-black mx-auto my-1"}>Департамент №2</h4>
             </button>
             <button
                 className={selectedButton == 3 ? "vstack m-0 p-1 br-12 bg-fio" : "vstack m-0 p-1 br-12 bg-grey-3"}
                 id="tbg-radio-4" value={3} onClick={() => handleToggle(3)}>
                     <img src={temp3} alt=""/>
-                    <h4 className={selectedButton == 3 ? "fc-white fc-fio mx-auto my-1" : "fc-fio fc-fio mx-auto my-1"}>Яркая</h4>
+                    <h4 className={selectedButton == 3 ? "fc-white fc-fio mx-auto my-1" : "fc-black mx-auto my-1"}>Яркая</h4>
             </button>
             <button
                 className={selectedButton == 4 ? "vstack m-0 p-1 br-12 bg-fio" : "vstack m-0 p-1 br-12 bg-grey-3"}
                 id="tbg-radio-4" value={3} onClick={() => handleToggle(4)}>
                     <img src={temp4} alt=""/>
-                    <h4 className={selectedButton == 4 ? "fc-white fc-fio mx-auto my-1" : "fc-fiofc-fio mx-auto my-1"}>Круглая</h4>
+                    <h4 className={selectedButton == 4 ? "fc-white fc-fio mx-auto my-1" : "fc-black mx-auto my-1"}>Круглая</h4>
             </button>
         </ToggleButtonGroup>
 
