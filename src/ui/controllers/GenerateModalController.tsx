@@ -12,7 +12,7 @@ export function GenerateModalController(){
             swipeRef.current.swiper.slideNext();
     }
 
-    return <Swiper ref={swipeRef} noSwiping={false} noSwipingClass={'swiper-slide'} allowTouchMove={false} >
+    return <Swiper ref={swipeRef} noSwiping={false} noSwipingClass={'swiper-slide'} allowTouchMove={false}>
         <SwiperSlide>
             <GenMod1 nextPage={nextPage}/>
         </SwiperSlide>
@@ -20,7 +20,7 @@ export function GenerateModalController(){
             <GenMod2 nextPage={nextPage}/>
         </SwiperSlide>
         <SwiperSlide>
-            <GenMod3 nextPage={nextPage}/>
+            <GenMod3/>
         </SwiperSlide>
     </Swiper>
 }
