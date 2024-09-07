@@ -17,6 +17,7 @@ export const useUserStore = create<UserStore>()((set) => ({
     user: new Loading<User>(),
     authenticationUser: async (authenticationData: AuthenticationData) => {
         const user = await userService.authenticateUser(authenticationData);
+        console.log(user);
         if (user instanceof Success<User>)
             useTokenStore(state => state.setToken)(user.data.token)
 

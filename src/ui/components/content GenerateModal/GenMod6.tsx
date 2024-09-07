@@ -1,5 +1,6 @@
 import gen from "../../../assets/gen.svg";
 import {useEffect, useState} from "react";
+import {useNavigate} from "react-router";
 
 interface GenModProps {
     nextPage: () => void,
@@ -9,6 +10,7 @@ interface GenModProps {
 
 export default function GenMod6(props: GenModProps) {
     const [percentage, setPercentage] = useState(0);
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (props.isCurrentPage) {
@@ -40,7 +42,7 @@ export default function GenMod6(props: GenModProps) {
                 </div>
             </button>
             <button className="col-auto align-items-center hstack m-0 p-3 bg-fio br-36 align-items-center"
-                    onClick={props.nextPage}>
+                    onClick={() => {navigate("/redactor")}}>
                 <div className="icon-box bg-white">
                     <img src={gen} alt=""/>
                 </div>

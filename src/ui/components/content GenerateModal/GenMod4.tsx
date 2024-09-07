@@ -11,8 +11,16 @@ interface GenModProps {
 export default function GenMod4(props: GenModProps) {
     const [selectedButton, setSelectedButton] = useState(0);
     const [count, setCount] = useState(0);
+
+    const setNewCount = (newValue: string) => {
+        const newNumber = Number(newValue)
+        if (newNumber)
+            setSelectedButton(0)
+        setCount(prevState => newNumber ? newNumber : prevState)
+    }
+
     const handleToggle = (value: number) => {
-        console.log(value);
+        setCount(0)
         setSelectedButton(value);
     }
 
@@ -60,7 +68,7 @@ export default function GenMod4(props: GenModProps) {
 
         <div className="input-group mb-3 justify-content-center">
             <input type="number" className="form-control text-field shadow-none no-border" placeholder="10"
-                   aria-label="Number of slides" aria-describedby="basic-addon2" value={count} onChange={event => setCount(Number(event.target.value))}/>
+                   aria-label="Number of slides" aria-describedby="basic-addon2" value={count} onChange={event => setNewCount(event.target.value)}/>
             <span className="input-group-text" id="basic-addon2">слайдов</span>
         </div>
 

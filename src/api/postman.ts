@@ -43,16 +43,16 @@ class Postman {
         if (Object.keys(headers).length > 0) console.log('headers: ', headers);
         try {
             const result = await axios.post(
-                baseUrl + route,
+                "https://cors-anywhere.herokuapp.com/" + baseUrl + route,
                 {
                     method: 'POST',
                     headers: token ? {...headers, 'Authorization': token} : {...headers},
                     body: body,
-                    withCredentials: false,
                 }
             )
-            console.log(result.data);
-            return new Success(result.data);
+            console.log(result.request.body)
+            console.log(result.data)
+            return new Success(result.data)
         } catch (error) {
             return new ErrorResult(
                 axios.isAxiosError(error) && error.response ? `Ошибка HTTP: ${error.response.status} ${error.response.statusText}` : "Неизвестная ошибка"
