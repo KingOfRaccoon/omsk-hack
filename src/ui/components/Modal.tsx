@@ -1,4 +1,5 @@
 import {ReactNode} from "react";
+import xmark from "../../assets/xmark.svg";
 
 interface ModalType {
     children?: ReactNode;
@@ -14,7 +15,9 @@ export default function Modal(props: ModalType) {
                     <div className="modal-box">
                         {props.children}
                     </div>
-                    <button onClick={props.toggle} className="menu-button">Close</button>
+                    <button onClick={props.toggle} className="icon-box bg-white">
+                        <img src={xmark} alt=""/>
+                    </button>
                 </div>
             )}
         </>

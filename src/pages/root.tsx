@@ -17,6 +17,7 @@ import link from "../assets/link.svg";
 import plus from "../assets/plus.svg";
 import left from "../assets/left.svg";
 import right from "../assets/right.svg";
+
 import GenerateModalBody from "../ui/components/GenerateModalBody.tsx";
 import CreateModalBody from "../ui/components/CreateModalBody.tsx";
 import TemplateModalBody from "../ui/components/TemplateModalBody.tsx";
@@ -145,7 +146,7 @@ const HeaderRoot = () => {
                     <h3 className="fc-grey-20 mt-4">У вас еще нет презентаций :(</h3>
                     <button className="align-items-center hstack m-0 p-3 bg-grey-30 br-36 align-items-center mx-auto mt-3 mb-2">
                         <div className="text-start">
-                            <h3 className="fc-blue">Создать</h3>
+                            <h3 className="fc-fio">Создать</h3>
                         </div>
                         <div className="icon-box ms-2">
                             <img src={plus} alt=""/>
@@ -157,7 +158,7 @@ const HeaderRoot = () => {
                 <div className="container p-3 pe-2 bg-white br-36">
                     <div className="container hstack">
                         <h3>Мои презентации</h3>
-                        <a><small className="fc-blue ms-3">Все</small></a>
+                        <a><small className="fc-fio ms-3">Все</small></a>
                         <div className="icon-box ms-auto">
                             <img src={left} alt=""/>
                         </div>

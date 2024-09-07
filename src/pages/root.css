@@ -45,14 +45,20 @@ small{
 .fc-grey-50{
     color: rgba(0, 0, 0, 0.50);
 }
-.bg-grey-30{
-    background: rgba(0, 0, 0, 0.03);
-}
 .fc-grey-20{
     color: rgba(0, 0, 0, 0.20);
 }
-.fc-blue{
-    color: #5269FF;
+.fc-fio{
+    color:  #5269FF;
+}
+.fc-white{
+    color: #ffffff;
+}
+.bg-grey-30{
+    background: rgba(0, 0, 0, 0.03);
+}
+.bg-fio{
+    background: #5269FF;
 }
 .menu-item{
     padding: 12px 12px;
