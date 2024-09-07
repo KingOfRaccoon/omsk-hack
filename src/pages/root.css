@@ -80,7 +80,7 @@ small{
     border: 3px dashed #fff;
 }
 
-.btn-group>.btn-group:not(:last-child)>.btn, .btn-group>.btn.dropdown-toggle-split:first-child, .btn-group>.btn:not(:last-child):not(.dropdown-toggle), .btn-group>.btn-group:not(:first-child)>.btn, .btn-group>.btn:nth-child(n+3), .btn-group>:not(.btn-check)+.btn {
+.btn-group>.btn-group:not(:last-child)>.btn, .input-group, .btn-group>.btn.dropdown-toggle-split:first-child, .btn-group>.btn:not(:last-child):not(.dropdown-toggle), .btn-group>.btn-group:not(:first-child)>.btn, .btn-group>.btn:nth-child(n+3), .btn-group>:not(.btn-check)+.btn {
     border-top-right-radius: 36px;
     border-bottom-right-radius: 36px;
     border-top-left-radius: 36px;
@@ -91,7 +91,7 @@ small{
     -webkit-border-top-right-radius: 36px;
     -webkit-border-bottom-right-radius: 36px;
 }
-.btn-group>.btn-group:not(:first-child)>.btn, .btn-group>.btn:nth-child(n+3), .btn-group>:not(.btn-check)+.btn {
+.btn-group>.btn-group:not(:first-child)>.btn,  .input-group, .btn-group>.btn:nth-child(n+3), .btn-group>:not(.btn-check)+.btn {
     border-top-left-radius: 36px;
     border-bottom-left-radius: 36px;
     border-top-right-radius: 36px;
@@ -104,12 +104,21 @@ small{
 }
 .text-field{
     display: flex;
-    width: 250px!important;
+    max-width: 200px;
     height: 50px;
     /*padding: 16px 20px;*/
     justify-content: space-between;
     align-items: center;
     background: rgba(0, 0, 0, 0.03)!important;
+}
+.input-group{
+    width: 350px;
+    border: none!important;
+    border-radius: 36px!important;
+}
+.input-group-text{
+    background: transparent!important;
+    border: none!important;
 }
 .presentation-box{
     flex: 1 0 0;
