@@ -1,0 +1,53 @@
+.logo{
+    justify-content: space-between;
+    align-items: center;
+}
+.br-36 {
+    border-radius: 36px;
+}
+.menu-button{
+    display: flex;
+    width: 250px;
+    padding: 24px 20px 20px 20px;
+    align-items: flex-start;
+    gap: 16px;
+}
+.icon-box{
+    width: 32px;
+    height: 32px;
+    display: flex;
+    padding: 6px;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 30px;
+    background: rgba(0, 0, 0, 0.02);
+}
+h2{
+    font-size: 20px!important;
+    line-height: 110%;
+}
+h3{
+    font-size: 18px!important;
+    line-height: 110%;
+}
+h4{
+    font-size: 16px!important;
+    line-height: 110%;
+}
+p{
+    font-size: 14px!important;
+    line-height: 110%;
+}
+small{
+    font-size: 12px!important;
+    line-height: 100%;
+}
+.fc-grey{
+    color: rgba(0, 0, 0, 0.50);
+}
+.menu-item{
+    padding: 12px 12px;
+}
+.menu-item:hover{
+    background: rgba(0, 0, 0, 0.01);
+}
