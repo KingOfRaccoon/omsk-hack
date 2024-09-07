@@ -59,6 +59,41 @@ class Postman {
             );
         }
     }
+
+    async postFile<T>(
+        baseUrl: string,
+        route: string,
+        file: File,
+        token: string | null = null,
+        headers: Record<string, any> = {},
+    ): Promise<Result<T>> {
+        const formData = new FormData();
+        formData.append('file', file);
+        console.log('post url: ', baseUrl, route);
+        if (file) console.log('file: ', file.name);
+        if (Object.keys(headers).length > 0) console.log('headers: ', headers);
+        try {
+            const result = await axios.post(
+                baseUrl + route,
+                formData,
+                {
+                    method: 'POST',
+                    headers: token ? {
+                        ...headers,
+                        'Authorization': token,
+                        'Content-Type': 'multipart/form-data'
+                    } : {...headers, 'Content-Type': 'multipart/form-data'},
+                    withCredentials: false,
+                }
+            )
+            console.log(result.data);
+            return new Success(result.data);
+        } catch (error) {
+            return new ErrorResult(
+                axios.isAxiosError(error) && error.response ? `Ошибка HTTP: ${error.response.status} ${error.response.statusText}` : "Неизвестная ошибка"
+            );
+        }
+    }
 }
 
 export const postman = new Postman();
