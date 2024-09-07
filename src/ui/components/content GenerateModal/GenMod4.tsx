@@ -9,26 +9,13 @@ interface GenModProps {
 }
 
 export default function GenMod4(props: GenModProps) {
-    const [percentage, setPercentage] = useState(0);
-    const [selectedButton, setSelectedButton] = useState(1);
+    const [selectedButton, setSelectedButton] = useState(0);
+    const [count, setCount] = useState(0);
     const handleToggle = (value: number) => {
         console.log(value);
         setSelectedButton(value);
     }
-    useEffect(() => {
-        if (props.isCurrentPage) {
-            if (percentage >= 100) {
-                setTimeout(() => {
-                    props.nextPage()
-                }, 1000);
-            } else {
-                setTimeout(() => {
-                    const newValue = percentage + Math.floor(Math.random() * 14) + 1
-                    setPercentage(newValue > 100 ? 100 : newValue)
-                }, 300)
-            }
-        }
-    }, [percentage, props.isCurrentPage]);
+
     return <div>
         {/*из файла -4- */}
         <div className="row">
@@ -72,13 +59,13 @@ export default function GenMod4(props: GenModProps) {
         <small className="fc-grey-50 d-block my-4">или введи точное количество</small>
 
         <div className="input-group mb-3 justify-content-center">
-            <input type="text" className="form-control text-field shadow-none no-border" placeholder="10"
-                   aria-label="Number of slides" aria-describedby="basic-addon2"/>
+            <input type="number" className="form-control text-field shadow-none no-border" placeholder="10"
+                   aria-label="Number of slides" aria-describedby="basic-addon2" value={count} onChange={event => setCount(Number(event.target.value))}/>
             <span className="input-group-text" id="basic-addon2">слайдов</span>
         </div>
 
         <button className="align-items-center hstack align-items-center hstack m-0 p-3 bg-fio br-36 align-items-center mx-auto"
-                onClick={props.nextPage}>
+                onClick={props.nextPage} disabled={selectedButton == 0 && count == 0}>
             <div className="icon-box bg-white">
                 <img src={gen} alt=""/>
             </div>
