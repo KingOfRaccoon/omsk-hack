@@ -36,7 +36,7 @@ export default function GenMod6(props: GenModProps) {
             }
         }
     }, [percentage, props.isCurrentPage]);
-    return <div>
+    return <div id="fix-parent-block">
         {/*из файла -4- */}
         <div className="row">
             <h2>Генерация презентации</h2>

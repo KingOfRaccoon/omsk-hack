@@ -164,3 +164,6 @@ small{
 #templates button{
     width: 180px;
 }
+#fix-parent-block{
+    width: max-content;
+}
