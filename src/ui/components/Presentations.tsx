@@ -18,6 +18,8 @@ export function Presentations() {
         sliderRef.current.swiper.slideNext();
     }, []);
 
+    const items = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
     return <div className="container p-3 pe-2 bg-white br-36">
         <div className="container hstack">
             <h3>Мои презентации</h3>
@@ -31,20 +33,22 @@ export function Presentations() {
         </div>
 
         {/*<div>*/}
-            <Swiper ref={sliderRef} slidesPerView={1}>
-                {/*<div className="swiper-wrapper">*/}
-                <SwiperSlide>Slide 1</SwiperSlide>
-                <SwiperSlide>Slide 2</SwiperSlide>
-                <SwiperSlide>Slide 3</SwiperSlide>
-                <SwiperSlide>Slide 4</SwiperSlide>
-                {/*</div>*/}
-                {/*<div className="swiper-pagination"></div>*/}
+        <Swiper ref={sliderRef} slidesPerView={4}>
+            {/*<div className="swiper-wrapper">*/}
+            {items.map((index) => {return (<SwiperSlide>Slide {index + 1}</SwiperSlide>);})}
+            {/*<SwiperSlide>Slide 1</SwiperSlide>*/}
+            {/*<SwiperSlide>Slide 2</SwiperSlide>*/}
+            {/*<SwiperSlide>Slide 3</SwiperSlide>*/}
+            {/*<SwiperSlide>Slide 4</SwiperSlide>*/}
+            {/*</div>*/}
+            {/*<div className="swiper-pagination"></div>*/}
 
-                {/*<div className="swiper-button-prev"></div>*/}
-                {/*<div className="swiper-button-next"></div>*/}
+            {/*<div className="swiper-button-prev"></div>*/}
+            {/*<div className="swiper-button-next"></div>*/}
 
-                {/*<div className="swiper-scrollbar"></div>*/}
-            </Swiper>
-        {/*</div>*/}
+            {/*<div className="swiper-scrollbar"></div>*/}
+        </Swiper>
+        {/*</div>*/
+        }
     </div>
 }

@@ -3,6 +3,7 @@ import {PresentationData} from "../../domain/models/PresentationData.ts";
 import {create} from "zustand";
 import {Loading, Result} from "../../api/result.ts";
 import {presentationService} from "../services/PresentationService.ts";
+import {useTokenStore} from "./useTokenStore.ts";
 
 interface PresentationStore {
     presentations: Result<Presentation[]>,
@@ -19,21 +20,21 @@ export const usePresentationStore = create<PresentationStore>()((set) => ({
     presentations: new Loading(),
     newPresentation: new Loading(),
     newPresentationFile: new Loading(),
-    loadText: async (text: string, token: string) => {
+    loadText: async (text: string) => {
         set(() => ({ newPresentation: new Loading()}))
-        const presentation = await presentationService.loadText(text, token);
+        const presentation = await presentationService.loadText(text, useTokenStore(state => state.getToken)());
 
         set(() => ({ newPresentation: presentation }))
     },
-    loadFile: async (file: File, token: string) => {
+    loadFile: async (file: File) => {
         set(() => ({ newPresentation: new Loading()}))
-        const presentation = await presentationService.loadFile(file, token);
+        const presentation = await presentationService.loadFile(file, useTokenStore(state => state.getToken)());
 
         set(() => ({ newPresentation: presentation }))
     },
-    loadEdited: async (presentationData: PresentationData, token: string) => {
+    loadEdited: async (presentationData: PresentationData) => {
         set(() => ({ newPresentationFile: new Loading()}))
-        const presentation = await presentationService.loadEdited(presentationData, token);
+        const presentation = await presentationService.loadEdited(presentationData, useTokenStore(state => state.getToken)());
 
         set(() => ({ newPresentationFile: presentation }))
     },
