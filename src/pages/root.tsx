@@ -45,7 +45,7 @@ const HeaderRoot = () => {
                         <div className="container hstack gap-3 p-0 mb-2">
                             <img src={imgPerson} alt=""/>
                             <h3 className="text-start">Семенова Ирина Петровна</h3>
-                            <button className="icon-box ms-auto">
+                            <button className="icon-box ms-auto p-1">
                                 <img src={settings} alt=""/>
                             </button>
                         </div>

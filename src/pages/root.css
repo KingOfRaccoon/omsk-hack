@@ -45,6 +45,9 @@ small{
     font-size: 12px!important;
     line-height: 100%;
 }
+.fc-black{
+    color: rgba(0, 0, 0);
+}
 .fc-grey-50{
     color: rgba(0, 0, 0, 0.50);
 }
