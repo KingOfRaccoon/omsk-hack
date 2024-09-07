@@ -3,6 +3,7 @@ import {Swiper, SwiperRef, SwiperSlide} from "swiper/react";
 import GenMod1 from "../components/content GenerateModal/GenMod1.tsx";
 import GenMod2 from "../components/content GenerateModal/GenMod2.tsx";
 import GenMod3 from "../components/content GenerateModal/GenMod3.tsx";
+import GenMod4 from "../components/content GenerateModal/GenMod4.tsx";
 
 export function GenerateModalController(){
     const swipeRef = useRef<SwiperRef>(null);
@@ -20,7 +21,10 @@ export function GenerateModalController(){
             <GenMod2 nextPage={nextPage}/>
         </SwiperSlide>
         <SwiperSlide>
-            <GenMod3/>
+            <GenMod3 nextPage={nextPage}/>
+        </SwiperSlide>
+        <SwiperSlide>
+            <GenMod4/>
         </SwiperSlide>
     </Swiper>
 }

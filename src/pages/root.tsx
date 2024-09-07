@@ -15,10 +15,7 @@ import useModal from "../domain/hooks/useModel.ts";
 import Modal from "../ui/components/Modal.tsx";
 import link from "../assets/link.svg";
 import plus from "../assets/plus.svg";
-import left from "../assets/left.svg";
-import right from "../assets/right.svg";
 
-import GenerateModalBody from "../ui/components/GenerateModalBody.tsx";
 import CreateModalBody from "../ui/components/CreateModalBody.tsx";
 import TemplateModalBody from "../ui/components/TemplateModalBody.tsx";
 import PresentationsController from "../ui/controllers/PresentationsController.tsx";
@@ -47,7 +44,7 @@ const HeaderRoot = () => {
                     <div className="container vstack gap-2 p-3 bg-white br-36">
                         <div className="container hstack gap-3 p-0 mb-2">
                             <img src={imgPerson} alt=""/>
-                            <h3>Семенова Ирина Петровна</h3>
+                            <h3 className="text-start">Семенова Ирина Петровна</h3>
                             <button className="icon-box ms-auto">
                                 <img src={settings} alt=""/>
                             </button>

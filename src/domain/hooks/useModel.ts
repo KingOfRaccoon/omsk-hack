@@ -29,6 +29,6 @@ export default function useModal() {
         isCreateOpen,
         toggleCreate,
         isTemplateOpen,
-        toggleTemplate
+        toggleTemplate,
     };
 }

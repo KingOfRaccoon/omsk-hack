@@ -2,7 +2,11 @@ import {CircularProgressbar} from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import {useEffect} from "react";
 
-export default function GenMod3() {
+export interface GenModProps {
+    nextPage: () => void;
+}
+
+export default function GenMod3(props: GenModProps) {
 
     const percentage = 66;
 
@@ -19,7 +23,7 @@ export default function GenMod3() {
             <small className="fc-grey-50">шаг 1 из 3</small>
         </div>
 
-        <div className="container mt-4" style={{width: 200, height: 200}}>
+        <div className="container mt-5" style={{width: 200, height: 200}} onClick={props.nextPage}>
             <CircularProgressbar text={"66%"} value={66} strokeWidth={2}
                  styles={{
                      root: {},
