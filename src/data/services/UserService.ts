@@ -10,7 +10,15 @@ class UserService {
     private authOnTokenTag = "";
 
     async authenticateUser(authenticationData: AuthenticationData) {
-        return await postman.post<User>(this.baseUrl, this.authTag, null, authenticationData);
+
+        return await postman.post<User>(this.baseUrl, this.authTag, null, {
+            "email": "string",
+            "password": "string"
+        }, {
+            'X-Requested-With': '1',
+            'Origin': '',
+            'Content-Type': 'application/json'
+        });
     }
 
     async registrationUser(registrationData: RegistrationData) {
