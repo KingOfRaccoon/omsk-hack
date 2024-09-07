@@ -33,7 +33,7 @@ export default function GenMod4(props: GenModProps) {
 
         <h3 className="mt-4">Сколько слайдов хочешь получить?</h3>
 
-        <ToggleButtonGroup className="gap-2 mt-3 mb-2" type="radio" name="options" defaultValue={2}>
+        <ToggleButtonGroup className="gap-2 mt-3" type="radio" name="options" defaultValue={2}>
             <button
                 className={selectedButton == 1 ? "align-items-center hstack m-0 p-3 br-36 align-items-center mx-auto bg-fio" : "align-items-center hstack m-0 p-3 bg-grey-3 br-36 align-items-center mx-auto"}
                 id="tbg-radio-1" value={1} onClick={() => handleToggle(1)}>
@@ -66,7 +66,7 @@ export default function GenMod4(props: GenModProps) {
 
         <small className="fc-grey-50 d-block my-4">или введи точное количество</small>
 
-        <div className="input-group mb-3 justify-content-center">
+        <div className="input-group mb-4 justify-content-center">
             <input type="number" className="form-control text-field shadow-none no-border" placeholder="10"
                    aria-label="Number of slides" aria-describedby="basic-addon2" value={count} onChange={event => setNewCount(event.target.value)}/>
             <span className="input-group-text" id="basic-addon2">слайдов</span>

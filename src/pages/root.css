@@ -5,6 +5,9 @@
 .br-36 {
     border-radius: 36px;
 }
+.br-12 {
+    border-radius: 12px;
+}
 .menu-button{
     display: flex;
     width: 250px;
@@ -56,6 +59,9 @@ small{
 }
 .bg-grey-3{
     background: rgba(0, 0, 0, 0.03);
+}
+.bg-grey-30{
+    background: rgba(0, 0, 0, 0.3);
 }
 .bg-fio{
     background: #5269FF;
@@ -149,7 +155,15 @@ small{
 .swiper-wrapper{
     gap: 1%;
 }
-
 .disable-button{
     opacity: 0.3;
+}
+#templates button img{
+    width: 100%;
+}
+#templates button{
+    width: 180px;
+}
+#fix-parent-block{
+    width: max-content;
 }
