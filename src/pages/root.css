@@ -57,6 +57,9 @@ small{
 .bg-grey-3{
     background: rgba(0, 0, 0, 0.03);
 }
+.bg-grey-30{
+    background: rgba(0, 0, 0, 0.3);
+}
 .bg-fio{
     background: #5269FF;
 }
@@ -148,4 +151,7 @@ small{
 }
 .swiper-wrapper{
     gap: 1%;
+}
+.disable-button{
+    opacity: 0.3;
 }
