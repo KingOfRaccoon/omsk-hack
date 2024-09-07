@@ -21,13 +21,8 @@ import right from "../assets/right.svg";
 import GenerateModalBody from "../ui/components/GenerateModalBody.tsx";
 import CreateModalBody from "../ui/components/CreateModalBody.tsx";
 import TemplateModalBody from "../ui/components/TemplateModalBody.tsx";
-
-// import Swiper JS
-// import Swiper from 'swiper';
-
-// import Swiper styles
-// import 'swiper/css';
-// import '../../src/ui/components/swiper.js'
+import PresentationsController from "../ui/controllers/PresentationsController.tsx";
+import {GenerateModalController} from "../ui/controllers/GenerateModalController.tsx";
 
 const HeaderRoot = () => {
     const {isGenerateOpen, toggleGenerate, isCreateOpen, toggleCreate, isTemplateOpen, toggleTemplate} = useModal()
@@ -138,56 +133,11 @@ const HeaderRoot = () => {
                     </div>
 
                 {/* MAIN */}
-                {/*НЕТ ПРЕЗ*/}
-                <div className="container p-3 pe-2 bg-white br-36">
-                    <div className="container text-start">
-                        <h3>Мои презентации</h3>
-                    </div>
-                    <h3 className="fc-grey-20 mt-4">У вас еще нет презентаций :(</h3>
-                    <button className="align-items-center hstack m-0 p-3 px-4 bg-grey-30 br-36 align-items-center mx-auto mt-3 mb-2">
-                        <div className="text-start">
-                            <h3 className="fc-fio">Создать</h3>
-                        </div>
-                        <div className="icon-box ms-2">
-                            <img src={plus} alt=""/>
-                        </div>
-                    </button>
-                </div>
-
-                    {/*ЕСТЬ ПРЕЗы*/}
-                <div className="container p-3 pe-2 bg-white br-36">
-                    <div className="container hstack">
-                        <h3>Мои презентации</h3>
-                        <a><small className="fc-fio ms-3">Все</small></a>
-                        <div className="icon-box ms-auto">
-                            <img src={left} alt=""/>
-                        </div>
-                        <div className="icon-box ms-3">
-                            <img src={right} alt=""/>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div className="swiper">
-                            <div className="swiper-wrapper">
-                                <div className="swiper-slide">Slide 1</div>
-                                <div className="swiper-slide">Slide 2</div>
-                                <div className="swiper-slide">Slide 3</div>
-                                ...
-                            </div>
-                            <div className="swiper-pagination"></div>
-
-                            <div className="swiper-button-prev"></div>
-                            <div className="swiper-button-next"></div>
-
-                            <div className="swiper-scrollbar"></div>
-                        </div>
-                    </div>
-                    </div>
+                <PresentationsController/>
                 </div>
             </div>
             <Modal isOpen={isGenerateOpen} toggle={toggleGenerate}>
-                <GenerateModalBody/>
+                <GenerateModalController/>
             </Modal>
 
             <Modal isOpen={isCreateOpen} toggle={toggleCreate}>
