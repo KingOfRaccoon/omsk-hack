@@ -1,11 +1,11 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React from 'react';
 import save from "../../assets/save.svg";
 import {usePresentationStore} from "../../data/stores/usePresentationStore.ts";
 import {GenModProps} from "./content GenerateModal/GenMod1.tsx";
 
 export const Upload = (props: GenModProps) => {
     const setUserFile = usePresentationStore(state => state.setUserFile)
-    const fileInputRef = useRef<HTMLInputElement | null>();
+    const fileInputRef = React.createRef<HTMLInputElement>();
 
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (e.target.files) {

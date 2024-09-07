@@ -4,7 +4,6 @@ import {Form} from "react-bootstrap";
 import {useUserStore} from "../data/stores/useUserStore.ts";
 import {AuthenticationData} from "../domain/models/AuthenticationData.ts";
 import {useUser} from "../domain/hooks/useUser.ts";
-import {User} from "../domain/models/User.ts";
 import {Success} from "../api/result.ts";
 
 export function LoginPage() {
@@ -16,7 +15,7 @@ export function LoginPage() {
 
     useEffect(() => {
         console.log(user)
-        if (user instanceof Success<User>)
+        if (user instanceof Success)
             navigate("/main")
     }, [user])
 

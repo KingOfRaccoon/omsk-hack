@@ -34,7 +34,7 @@ export function Presentations() {
         </div>
 
         <Swiper className="mt-2" ref={sliderRef} slidesPerView={4}>
-            {items.map((index) => {return (
+            {items.map(() => {return (
                 <SwiperSlide>
                     <ItemPresentation/>
                 </SwiperSlide>);})}

@@ -3,8 +3,6 @@ import temp1 from "../../../assets/temp1.png";
 import temp2 from "../../../assets/temp2.png";
 import temp3 from "../../../assets/temp3.png";
 import temp4 from "../../../assets/temp4.png";
-import temp5 from "../../../assets/temp5.png";
-import temp6 from "../../../assets/temp6.png";
 import {useEffect, useState} from "react";
 import {useNavigate} from "react-router";
 import {ToggleButtonGroup} from "react-bootstrap";

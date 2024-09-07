@@ -4,21 +4,14 @@ import {User} from "../../domain/models/User.ts";
 import {RegistrationData} from "../../domain/models/RegistrationData.ts";
 
 class UserService {
-    private baseUrl = "http://213.171.10.242/api/v1/auth";
+    private baseUrl = "https://humorous-ringtail-abnormally.ngrok-free.app/api/v1/auth";
     private authTag = "/authenticate";
     private registrationTag = "/register";
     private authOnTokenTag = "";
 
     async authenticateUser(authenticationData: AuthenticationData) {
 
-        return await postman.post<User>(this.baseUrl, this.authTag, null, {
-            "email": "string",
-            "password": "string"
-        }, {
-            'X-Requested-With': '1',
-            'Origin': '',
-            'Content-Type': 'application/json'
-        });
+        return await postman.post<User>(this.baseUrl, this.authTag, null, authenticationData);
     }
 
     async registrationUser(registrationData: RegistrationData) {

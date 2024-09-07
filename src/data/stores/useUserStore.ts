@@ -18,21 +18,21 @@ export const useUserStore = create<UserStore>()((set) => ({
     authenticationUser: async (authenticationData: AuthenticationData) => {
         const user = await userService.authenticateUser(authenticationData);
         console.log(user);
-        if (user instanceof Success<User>)
+        if (user instanceof Success)
             useTokenStore(state => state.setToken)(user.data.token)
 
         set(() => ({ user: user }))
     },
     registrationUser: async (registrationData: RegistrationData) => {
         const user = await userService.registrationUser(registrationData);
-        if (user instanceof Success<User>)
+        if (user instanceof Success)
             useTokenStore(state => state.setToken)(user.data.token)
 
         set(() => ({ user: user }))
     },
     authenticationUserOnToken: async (token: string) => {
         const user = await userService.authenticateUserOnToken(token);
-        if (user instanceof Success<User>)
+        if (user instanceof Success)
             useTokenStore(state => state.setToken)(user.data.token)
 
         set(() => ({ user: user }))
