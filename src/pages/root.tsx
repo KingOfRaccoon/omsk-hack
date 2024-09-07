@@ -144,7 +144,7 @@ const HeaderRoot = () => {
                         <h3>Мои презентации</h3>
                     </div>
                     <h3 className="fc-grey-20 mt-4">У вас еще нет презентаций :(</h3>
-                    <button className="align-items-center hstack m-0 p-3 bg-grey-30 br-36 align-items-center mx-auto mt-3 mb-2">
+                    <button className="align-items-center hstack m-0 p-3 px-4 bg-grey-30 br-36 align-items-center mx-auto mt-3 mb-2">
                         <div className="text-start">
                             <h3 className="fc-fio">Создать</h3>
                         </div>

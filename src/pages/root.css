@@ -66,6 +66,18 @@ small{
 .menu-item:hover{
     background: rgba(0, 0, 0, 0.01);
 }
+.border-gradient {
+    border-width: 3px;
+    border-radius: 36px;
+    border-image-slice: 1;
+    border: 3px dashed #fff;
+    background:
+            linear-gradient(#fff 0 0) padding-box,
+            linear-gradient(138deg, rgba(244,174,204,1) 0%, rgba(245,188,204,1) 10%, rgba(247,212,199,1) 27%, rgba(249,243,178,1) 51%, rgba(218,240,253,1) 73%, rgba(168,220,248,1) 89%, rgba(72,191,235,1) 100%) border-box;
+}
+.border-gradient-purple {
+    border: 3px dashed #fff;
+}
 
 /*SLIDER*/
 /*.swiper {*/

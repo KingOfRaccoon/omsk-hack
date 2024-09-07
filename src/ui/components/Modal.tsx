@@ -15,7 +15,7 @@ export default function Modal(props: ModalType) {
                     <div className="modal-box">
                         {props.children}
                     </div>
-                    <button onClick={props.toggle} className="icon-box bg-white">
+                    <button onClick={props.toggle} className="close-modal icon-box bg-white">
                         <img src={xmark} alt=""/>
                     </button>
                 </div>
