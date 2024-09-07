@@ -1,7 +1,29 @@
 import {ToggleButtonGroup} from "react-bootstrap";
 import gen from "../../../assets/gen.svg";
+import {useEffect, useState} from "react";
 
-export default function GenMod4({}) {
+interface GenModProps {
+    nextPage: () => void;
+    isCurrentPage: boolean
+}
+
+export default function GenMod4(props: GenModProps) {
+    const [percentage, setPercentage] = useState(0);
+
+    useEffect(() => {
+        if (props.isCurrentPage) {
+            if (percentage >= 100) {
+                setTimeout(() => {
+                    props.nextPage()
+                }, 1000);
+            } else {
+                setTimeout(() => {
+                    const newValue = percentage + Math.floor(Math.random() * 14) + 1
+                    setPercentage(newValue > 100 ? 100: newValue)
+                }, 300)
+            }
+        }
+    }, [percentage, props.isCurrentPage]);
     return <div>
         {/*из файла -4- */}
         <div className="row">
@@ -53,7 +75,7 @@ export default function GenMod4({}) {
                 </div>
             </button>
             <button className="col-auto align-items-center hstack m-0 p-3 bg-fio br-36 align-items-center"
-                // onClick={props.nextPage}
+                onClick={props.nextPage}
             >
                 <div className="icon-box bg-white">
                     <img src={gen} alt=""/>

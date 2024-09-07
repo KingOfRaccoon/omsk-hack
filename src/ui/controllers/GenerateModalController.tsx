@@ -4,6 +4,8 @@ import GenMod1 from "../components/content GenerateModal/GenMod1.tsx";
 import GenMod2 from "../components/content GenerateModal/GenMod2.tsx";
 import GenMod3 from "../components/content GenerateModal/GenMod3.tsx";
 import GenMod4 from "../components/content GenerateModal/GenMod4.tsx";
+import GenMod5 from "../components/content GenerateModal/GenMod5.tsx";
+import GenMod6 from "../components/content GenerateModal/GenMod6.tsx";
 
 export function GenerateModalController() {
     const [index, setIndex] = useState(0);
@@ -12,6 +14,11 @@ export function GenerateModalController() {
     function nextPage() {
         if (swipeRef.current)
             swipeRef.current.swiper.slideNext();
+    }
+
+    function previousPage() {
+        if (swipeRef.current)
+            swipeRef.current.swiper.slidePrev();
     }
 
     return <Swiper
@@ -30,7 +37,13 @@ export function GenerateModalController() {
             <GenMod3 isCurrentPage={index == 2} nextPage={nextPage}/>
         </SwiperSlide>
         <SwiperSlide>
-            <GenMod4/>
+            <GenMod4 nextPage={nextPage} isCurrentPage={index == 3}/>
+        </SwiperSlide>
+        <SwiperSlide>
+            <GenMod5 nextPage={nextPage} isCurrentPage={index == 4}/>
+        </SwiperSlide>
+        <SwiperSlide>
+            <GenMod6 nextPage={nextPage} isCurrentPage={index == 5} prevPage={nextPage}/>
         </SwiperSlide>
     </Swiper>
 }
