@@ -17,8 +17,10 @@ export function GenerateModalController() {
     }
 
     function previousPage() {
-        if (swipeRef.current)
+        if (swipeRef.current) {
             swipeRef.current.swiper.slidePrev();
+            swipeRef.current.swiper.slidePrev();
+        }
     }
 
     return <Swiper
@@ -43,7 +45,7 @@ export function GenerateModalController() {
             <GenMod5 nextPage={nextPage} isCurrentPage={index == 4}/>
         </SwiperSlide>
         <SwiperSlide>
-            <GenMod6 nextPage={nextPage} isCurrentPage={index == 5} prevPage={nextPage}/>
+            <GenMod6 nextPage={nextPage} isCurrentPage={index == 5} prevPage={previousPage}/>
         </SwiperSlide>
     </Swiper>
 }
