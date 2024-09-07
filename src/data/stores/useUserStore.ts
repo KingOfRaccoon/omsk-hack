@@ -1,9 +1,10 @@
-import {Loading, Result} from "../../api/result.ts";
+import {Loading, Result, Success} from "../../api/result.ts";
 import {User} from "../../domain/models/User.ts";
 import {create} from "zustand";
 import {AuthenticationData} from "../../domain/models/AuthenticationData.ts";
 import {userService} from "../services/UserService.ts";
 import {RegistrationData} from "../../domain/models/RegistrationData.ts";
+import {useTokenStore} from "./useTokenStore.ts";
 
 interface UserStore {
     user: Result<User>,
@@ -16,7 +17,8 @@ export const useUserStore = create<UserStore>()((set) => ({
     user: new Loading<User>(),
     authenticationUser: async (authenticationData: AuthenticationData) => {
         const user = await userService.authenticateUser(authenticationData);
-
+        if (user instanceof Success<User>)
+            useTokenStore(state => state.setToken)(user.data.token)
         set(() => ({ user: user }))
     },
     registrationUser: async (registrationData: RegistrationData) => {

@@ -1,12 +1,16 @@
-import {buildStyles, CircularProgressbar} from 'react-circular-progressbar';
+import {CircularProgressbar} from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import {useEffect} from "react";
 
-export default function GenMod3({}) {
+export default function GenMod3() {
 
     const percentage = 66;
 
-    <CircularProgressbar value={percentage} text={`${percentage}%`} />;
+    useEffect(() => {
+        // if(percentage == 100)
+        //     props.nextPage
 
+    }, [percentage]);
     return <div>
 
         {/*из файла -3- */}

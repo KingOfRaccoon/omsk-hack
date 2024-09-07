@@ -11,7 +11,7 @@ export default function Modal(props: ModalType) {
     return (
         <>
             {props.isOpen && (
-                <div className="modal-overlay align-content-center">
+                <div className="modal-overlay align-content-center" >
                     <div className="modal-box">
                         {props.children}
                     </div>

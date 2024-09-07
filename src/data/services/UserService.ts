@@ -4,9 +4,9 @@ import {User} from "../../domain/models/User.ts";
 import {RegistrationData} from "../../domain/models/RegistrationData.ts";
 
 class UserService {
-    private baseUrl = "";
-    private authTag = "";
-    private registrationTag = "";
+    private baseUrl = "http://213.171.10.242/api/v1/auth";
+    private authTag = "/authenticate";
+    private registrationTag = "/register";
     private authOnTokenTag = "";
 
     async authenticateUser(authenticationData: AuthenticationData) {

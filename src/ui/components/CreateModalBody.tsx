@@ -1,5 +1,7 @@
+import CustomSwiper from "./swiper.tsx";
+
 export default function CreateModalBody({}) {
     return <div>
-        <h3>Create Modal Body</h3>
+        <CustomSwiper/>
     </div>
 }
