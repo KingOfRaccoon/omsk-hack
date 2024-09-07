@@ -149,3 +149,7 @@ small{
 .swiper-wrapper{
     gap: 1%;
 }
+
+.disable-button{
+    opacity: 0.3;
+}

@@ -1,6 +1,6 @@
-import {ToggleButton, ToggleButtonGroup} from "react-bootstrap";
+import {ToggleButtonGroup} from "react-bootstrap";
 import gen from "../../../assets/gen.svg";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 
 interface GenModProps {
     nextPage: () => void,
@@ -64,7 +64,7 @@ export default function GenMod4(props: GenModProps) {
             <span className="input-group-text" id="basic-addon2">слайдов</span>
         </div>
 
-        <button className="align-items-center hstack align-items-center hstack m-0 p-3 bg-fio br-36 align-items-center mx-auto"
+        <button className={selectedButton == 0 && count == 0 ? "align-items-center hstack align-items-center hstack m-0 p-3 bg-fio br-36 align-items-center mx-auto disable-button" : "align-items-center hstack align-items-center hstack m-0 p-3 bg-fio br-36 align-items-center mx-auto"}
                 onClick={props.nextPage} disabled={selectedButton == 0 && count == 0}>
             <div className="icon-box bg-white">
                 <img src={gen} alt=""/>
