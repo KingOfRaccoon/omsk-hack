@@ -17,6 +17,9 @@ import link from "../assets/link.svg";
 import plus from "../assets/plus.svg";
 import left from "../assets/left.svg";
 import right from "../assets/right.svg";
+import GenerateModalBody from "../ui/components/GenerateModalBody.tsx";
+import CreateModalBody from "../ui/components/CreateModalBody.tsx";
+import TemplateModalBody from "../ui/components/TemplateModalBody.tsx";
 
 // import Swiper JS
 // import Swiper from 'swiper';
@@ -183,21 +186,15 @@ const HeaderRoot = () => {
                 </div>
             </div>
             <Modal isOpen={isGenerateOpen} toggle={toggleGenerate}>
-                <div>
-                    <h3>Generate</h3>
-                </div>
+                <GenerateModalBody/>
             </Modal>
 
             <Modal isOpen={isCreateOpen} toggle={toggleCreate}>
-                <div>
-                    <h3>Create</h3>
-                </div>
+                <CreateModalBody/>
             </Modal>
 
             <Modal isOpen={isTemplateOpen} toggle={toggleTemplate}>
-                <div>
-    <h3>Template</h3>
-                </div>
+                <TemplateModalBody/>
             </Modal>
         </div>
     );
