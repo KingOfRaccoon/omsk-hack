@@ -5,6 +5,9 @@
 .br-36 {
     border-radius: 36px;
 }
+.br-12 {
+    border-radius: 12px;
+}
 .menu-button{
     display: flex;
     width: 250px;
@@ -154,4 +157,10 @@ small{
 }
 .disable-button{
     opacity: 0.3;
+}
+#templates button img{
+    width: 100%;
+}
+#templates button{
+    width: 180px;
 }
