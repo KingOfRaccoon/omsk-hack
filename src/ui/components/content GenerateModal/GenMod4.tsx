@@ -3,7 +3,6 @@ import gen from "../../../assets/gen.svg";
 
 export default function GenMod4({}) {
     return <div>
-
         {/*из файла -4- */}
         <div className="row">
             <h2>Генерация презентации</h2>
