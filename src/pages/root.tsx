@@ -11,6 +11,8 @@ import create from "../assets/edit_circle.svg";
 import chartPie from "../assets/pie-chart.svg";
 import clock from "../assets/clock_circle.svg";
 import file from "../assets/textСlean.svg";
+import useModal from "../domain/hooks/useModel.ts";
+import Modal from "../ui/components/Modal.tsx";
 import link from "../assets/link.svg";
 import plus from "../assets/plus.svg";
 import left from "../assets/left.svg";
@@ -24,30 +26,33 @@ import right from "../assets/right.svg";
 // import '../../src/ui/components/swiper.js'
 
 const HeaderRoot = () => {
+    const {isGenerateOpen, toggleGenerate, isCreateOpen, toggleCreate, isTemplateOpen, toggleTemplate} = useModal()
     return (
-        <div className="container-fluid hstack gap-3">
+        <div className="App">
+            <div className="container-fluid hstack gap-3"
+                 style={(isGenerateOpen || isCreateOpen || isTemplateOpen) ? {filter: 'blur(15px)'} : {}}>
 
             {/*LEFT PANEL*/}
             <div className="col-xxl-3 col-xl-3 col-sm-3 m-0 vstack gap-3">
 
-                {/*LOGO + search*/}
-                <div className="container hstack gap-3 p-3 bg-white br-36">
-                    <img src={icon} alt="" />
-                    <img src={icontitle} alt="" />
-                    <button className="icon-box ms-auto">
-                        <img src={isearch} alt=""/>
-                    </button>
-                </div>
-
-                {/*Person*/}
-                <div className="container vstack gap-2 p-3 bg-white br-36">
-                    <div className="container hstack gap-3 p-0 mb-2">
-                        <img src={imgPerson} alt=""/>
-                        <h3>Семенова Ирина Петровна</h3>
+                    {/*LOGO + search*/}
+                    <div className="container hstack gap-3 p-3 bg-white br-36">
+                        <img src={icon} alt=""/>
+                        <img src={icontitle} alt=""/>
                         <button className="icon-box ms-auto">
-                            <img src={settings} alt=""/>
+                            <img src={isearch} alt=""/>
                         </button>
                     </div>
+
+                    {/*Person*/}
+                    <div className="container vstack gap-2 p-3 bg-white br-36">
+                        <div className="container hstack gap-3 p-0 mb-2">
+                            <img src={imgPerson} alt=""/>
+                            <h3>Семенова Ирина Петровна</h3>
+                            <button className="icon-box ms-auto">
+                                <img src={settings} alt=""/>
+                            </button>
+                        </div>
 
                     {/*MENU ITEMS*/}
                     <div className="container menu-item hstack gap-3 br-36 px-2 py-2">
@@ -87,43 +92,46 @@ const HeaderRoot = () => {
                 </div>
             </div>
 
-            {/*RIGHT PANEL*/}
-            <div className="col-xxl-9 col-xl-9 col-sm-9 m-0 vstack gap-3">
+                {/*RIGHT PANEL*/}
+                <div className="col-xxl-9 col-xl-9 col-sm-9 m-0 vstack gap-3">
 
-                {/*TOP BUTTONs*/}
-                <div className="container hstack gap-3 p-0">
+                    {/*TOP BUTTONs*/}
+                    <div className="container hstack gap-3 p-0">
 
-                    <button className="menu-button container p-3 bg-white br-36 align-items-center">
-                        <div className="icon-box">
-                            <img src={gen} alt=""/>
-                        </div>
-                        <div className="align-items-center align-content-start text-start">
-                            <h3>Сгенерировать</h3>
-                            <small className="fc-grey-50">из файла pdf/docx</small>
-                        </div>
-                    </button>
+                        <button className="menu-button container p-3 bg-white br-36 align-items-center"
+                                onClick={toggleGenerate}>
+                            <div className="icon-box">
+                                <img src={gen} alt=""/>
+                            </div>
+                            <div className="align-items-center align-content-start text-start">
+                                <h3>Сгенерировать</h3>
+                                <small className="fc-grey-50">из файла pdf/docx</small>
+                            </div>
+                        </button>
 
-                    <button className="menu-button container p-3 bg-white br-36 align-items-center">
-                        <div className="icon-box">
-                            <img src={create} alt=""/>
-                        </div>
-                        <div className="align-items-center align-content-start text-start">
-                            <h3>Создать</h3>
-                            <small className="fc-grey-50">из текста</small>
-                        </div>
-                    </button>
+                        <button className="menu-button container p-3 bg-white br-36 align-items-center"
+                                onClick={toggleCreate}>
+                            <div className="icon-box">
+                                <img src={create} alt=""/>
+                            </div>
+                            <div className="align-items-center align-content-start text-start">
+                                <h3>Создать</h3>
+                                <small className="fc-grey-50">из текста</small>
+                            </div>
+                        </button>
 
-                    <button className="menu-button container p-3 bg-white br-36 align-items-center">
-                        <div className="icon-box">
-                            <img src={chartPie} alt=""/>
-                        </div>
-                        <div className="align-items-center align-content-start text-start">
-                            <h3>Все шаблоны</h3>
-                            <small className="fc-grey-50">выбрать и использовать</small>
-                        </div>
-                    </button>
+                        <button className="menu-button container p-3 bg-white br-36 align-items-center"
+                                onClick={toggleTemplate}>
+                            <div className="icon-box">
+                                <img src={chartPie} alt=""/>
+                            </div>
+                            <div className="align-items-center align-content-start text-start">
+                                <h3>Все шаблоны</h3>
+                                <small className="fc-grey-50">выбрать и использовать</small>
+                            </div>
+                        </button>
 
-                </div>
+                    </div>
 
                 {/* MAIN */}
                 {/*НЕТ ПРЕЗ*/}
@@ -142,7 +150,7 @@ const HeaderRoot = () => {
                     </button>
                 </div>
 
-                {/*ЕСТЬ ПРЕЗы*/}
+                    {/*ЕСТЬ ПРЕЗы*/}
                 <div className="container p-3 pe-2 bg-white br-36">
                     <div className="container hstack">
                         <h3>Мои презентации</h3>
@@ -171,11 +179,28 @@ const HeaderRoot = () => {
                             <div className="swiper-scrollbar"></div>
                         </div>
                     </div>
+                    </div>
                 </div>
             </div>
+            <Modal isOpen={isGenerateOpen} toggle={toggleGenerate}>
+                <div>
+                    <h3>Generate</h3>
+                </div>
+            </Modal>
+
+            <Modal isOpen={isCreateOpen} toggle={toggleCreate}>
+                <div>
+                    <h3>Create</h3>
+                </div>
+            </Modal>
+
+            <Modal isOpen={isTemplateOpen} toggle={toggleTemplate}>
+                <div>
+    <h3>Template</h3>
+                </div>
+            </Modal>
         </div>
     );
-
 }
 
 const Root = () => {
