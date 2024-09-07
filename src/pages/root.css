@@ -112,10 +112,30 @@ small{
     background: rgba(0, 0, 0, 0.03)!important;
 }
 .presentation-box{
-    height: 160px;
     flex: 1 0 0;
     border-radius: 20px;
-    background: lightgray 50% / cover no-repeat, rgba(0, 0, 0, 0.02);
+}
+.presentation-box img{
+    width: 100%;
+}
+.presentation-box p{
+    position: absolute;
+    top: 0;
+}
+.presentation-box .preview-box{
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    backdrop-filter: blur(7px);
+    background: rgba(255, 255, 255, 0.2);
+    position: absolute;
+    border-radius: 36px;
+    top: 68%;
+    right: 8px;
+}
+.preview-box img{
+    padding-top: 11px;
+    padding-left: 4px;
 }
 .swiper-wrapper{
     gap: 1%;

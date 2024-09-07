@@ -35,7 +35,7 @@ const HeaderRoot = () => {
                     <div className="container hstack gap-3 p-3 bg-white br-36">
                         <img src={icon} alt=""/>
                         <img src={icontitle} alt=""/>
-                        <button className="icon-box ms-auto">
+                        <button className="icon-box ms-auto p-0">
                             <img src={isearch} alt=""/>
                         </button>
                     </div>
@@ -52,19 +52,19 @@ const HeaderRoot = () => {
 
                     {/*MENU ITEMS*/}
                     <div className="container menu-item hstack gap-3 br-36 px-2 py-2">
-                        <div className="icon-box ">
+                        <div className="icon-box p-0">
                             <img src={home} alt=""/>
                         </div>
                         <h4>Главная</h4>
                     </div>
                     <div className="container menu-item hstack gap-3 br-36 px-2 py-2">
-                        <div className="icon-box ">
+                        <div className="icon-box p-0">
                             <img src={file} alt=""/>
                         </div>
                         <h4>Черновики</h4>
                     </div>
                     <div className="container menu-item hstack gap-3 br-36 px-2 py-2">
-                        <div className="icon-box ">
+                        <div className="icon-box p-0">
                             <img src={clock} alt=""/>
                         </div>
                         <h4>Недавние</h4>
@@ -74,13 +74,13 @@ const HeaderRoot = () => {
                 {/*TEAM ACTIVITies*/}
                 <div className="container vstack gap-2 p-3 bg-white br-36">
                     <div className="container menu-item hstack gap-3 br-36 px-2 py-2">
-                        <div className="icon-box ">
+                        <div className="icon-box p-0">
                             <img src={plus} alt=""/>
                         </div>
                         <h4>Создать команду</h4>
                     </div>
                     <div className="container menu-item hstack gap-3 br-36 px-2 py-2">
-                        <div className="icon-box ">
+                        <div className="icon-box p-0">
                             <img src={link} alt=""/>
                         </div>
                         <h4>Присоединиться к команде</h4>
@@ -96,7 +96,7 @@ const HeaderRoot = () => {
 
                         <button className="menu-button container p-3 bg-white br-36 align-items-center"
                                 onClick={toggleGenerate}>
-                            <div className="icon-box">
+                            <div className="icon-box p-0">
                                 <img src={gen} alt=""/>
                             </div>
                             <div className="align-items-center align-content-start text-start">
@@ -107,7 +107,7 @@ const HeaderRoot = () => {
 
                         <button className="menu-button container p-3 bg-white br-36 align-items-center"
                                 onClick={toggleCreate}>
-                            <div className="icon-box">
+                            <div className="icon-box p-0">
                                 <img src={create} alt=""/>
                             </div>
                             <div className="align-items-center align-content-start text-start">
@@ -118,7 +118,7 @@ const HeaderRoot = () => {
 
                         <button className="menu-button container p-3 bg-white br-36 align-items-center"
                                 onClick={toggleTemplate}>
-                            <div className="icon-box">
+                            <div className="icon-box p-0">
                                 <img src={chartPie} alt=""/>
                             </div>
                             <div className="align-items-center align-content-start text-start">
