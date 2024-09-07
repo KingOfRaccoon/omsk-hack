@@ -26,8 +26,6 @@ export default function GenMod3(props: GenModProps) {
     }, [percentage, props.isCurrentPage]);
 
     return <div>
-
-        {/*из файла -3- */}
         <div className="row">
             <h2>Генерация презентации</h2>
             <small className="fc-grey-50">шаг 1 из 3</small>
