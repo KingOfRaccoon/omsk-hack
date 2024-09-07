@@ -111,3 +111,12 @@ small{
     align-items: center;
     background: rgba(0, 0, 0, 0.03)!important;
 }
+.presentation-box{
+    height: 160px;
+    flex: 1 0 0;
+    border-radius: 20px;
+    background: lightgray 50% / cover no-repeat, rgba(0, 0, 0, 0.02);
+}
+.swiper-wrapper{
+    gap: 1%;
+}

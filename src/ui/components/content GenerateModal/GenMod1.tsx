@@ -24,5 +24,4 @@ export default function GenMod1(props: GenModProps) {
             </div>
         </button>
     </div>
-
 }
