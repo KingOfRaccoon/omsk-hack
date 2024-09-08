@@ -5,7 +5,7 @@ import {useUserStore} from "../data/stores/useUserStore.ts";
 import {AuthenticationData} from "../domain/models/AuthenticationData.ts";
 import {useUser} from "../domain/hooks/useUser.ts";
 import {Success} from "../api/result.ts";
-import back from "../assets/backImg.png";
+import logo from "../assets/presentationAI.svg";
 import go from "../assets/go.svg";
 
 export function LoginPage() {
@@ -21,18 +21,22 @@ export function LoginPage() {
     }
 
     return <div id="login" className="container-fluid p-0 overflow-hidden overflow-y-hidden">
-        {/*<img className="back-img" src={back} alt=""/>*/}
         <div className="login-box px-5 pt-5 pb-4 row">
             <div className="login-back container">
-                <h2 className="mt-3 mb-4">Вход</h2>
+                <img className="p-4" src={logo} alt=""/>
+
+                <h3 className="mt-3 mb-4">Вход</h3>
+
                 <Form>
                     <Form.Group className="mb-3 shadow-none no-border br-36" controlId="formBasicEmail">
-                        <Form.Control className="form-control text-field shadow-none no-border" type="text" placeholder="Enter email" value={login}
+                        <Form.Control className="form-control text-field shadow-none no-border" type="text"
+                                      placeholder="Enter email" value={login}
                                       onChange={(e) => setLogin(e.target.value)}/>
                     </Form.Group>
 
                     <Form.Group className="mb-5 shadow-none no-border br-36" controlId="formBasicPassword">
-                        <Form.Control className="form-control text-field shadow-none no-border" type="password" placeholder="Password" value={password}
+                        <Form.Control className="form-control text-field shadow-none no-border" type="password"
+                                      placeholder="Password" value={password}
                                       onChange={(e) => setPassword(e.target.value)}/>
                     </Form.Group>
 
@@ -47,6 +51,7 @@ export function LoginPage() {
                         </div>
                     </button>
                 </Form>
+                <a><p className="fc-fio mb-3">Зарегистрироваться</p></a>
             </div>
         </div>
     </div>
