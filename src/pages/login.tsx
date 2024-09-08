@@ -1,16 +1,10 @@
 import {useNavigate} from "react-router";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import {Form} from "react-bootstrap";
-import {useUserStore} from "../data/stores/useUserStore.ts";
-import {AuthenticationData} from "../domain/models/AuthenticationData.ts";
-import {useUser} from "../domain/hooks/useUser.ts";
-import {Success} from "../api/result.ts";
 import logo from "../assets/presentationAI.svg";
 import go from "../assets/go.svg";
 
 export function LoginPage() {
-    const authenticationUser = useUserStore(state => state.authenticationUser);
-    const user = useUser();
     const [login, setLogin] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
