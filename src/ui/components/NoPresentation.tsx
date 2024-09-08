@@ -7,7 +7,7 @@ import TemplateModalBody from "./TemplateModalBody.tsx";
 export function NoPresentation() {
     const {isAllOpen, toggleAll} = useModal2()
     return <div className="App">
-        <div className="container-fluid hstack gap-3"
+        <div className="container-fluid p-0 hstack gap-3"
              style={(isAllOpen) ? {filter: 'blur(15px)'} : {}}>
 
             <div className="container p-3 pe-2 bg-white br-36">

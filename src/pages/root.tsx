@@ -25,7 +25,7 @@ const HeaderRoot = () => {
     const {isGenerateOpen, toggleGenerate, isCreateOpen, toggleCreate, isTemplateOpen, toggleTemplate} = useModal()
     return (
         <div className="App">
-            <div className="container-fluid hstack gap-3"
+            <div className="container-fluid hstack gap-3 mt-2"
                  style={(isGenerateOpen || isCreateOpen || isTemplateOpen) ? {filter: 'blur(15px)'} : {}}>
 
             {/*LEFT PANEL*/}

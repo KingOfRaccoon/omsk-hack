@@ -21,7 +21,7 @@ export function Presentations() {
 
     const items = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-    return <div className="container p-3 pe-2 bg-white br-36">
+    return <div className="container pe-2 bg-white br-36">
         <div className="container hstack">
             <h3>Мои презентации</h3>
             <a><small className="fc-fio ms-3">Все</small></a>
