@@ -15,14 +15,9 @@ export function LoginPage() {
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
 
-    useEffect(() => {
-        console.log(user)
-        if (user instanceof Success)
-            navigate("/main")
-    }, [user])
-
     const loginUser = () => {
-        authenticationUser(new AuthenticationData(login, password))
+        navigate("/main")
+        // authenticationUser(new AuthenticationData(login, password))
     }
 
     return <div id="login" className="container-fluid p-0 overflow-hidden overflow-y-hidden">
