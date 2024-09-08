@@ -170,6 +170,17 @@ small{
 #fix-parent-block{
     width: max-content;
 }
+#root{
+    padding: 0;
+    overflow: hidden!important;
+    /*background-image: url("../assets/backImg.png");*/
+    /*background-size: cover;*/
+}
+#login{
+    overflow: hidden!important;
+    background-repeat:no-repeat;
+    background-size:cover
+}
 .back-img{
     height: 100vh;
     /* Center and scale the image nicely */
@@ -179,23 +190,19 @@ small{
 
 }
 .login-box{
-    z-index: 100;
-    position: fixed;
+    position: relative;
     top: 0;
-    right:0;
+    left: 0;
+    z-index: 2;
 }
 .login-back{
     border-radius: 36px;
     background: rgba(255, 255, 255, 0.80);
     display: flex;
-    width: 583px;
-    height: 428px;
-    padding: 35px;
+    width: 100%;
+    padding: 15px 100px;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     flex-shrink: 0;
-}
-#login{
-    overflow: hidden;
 }

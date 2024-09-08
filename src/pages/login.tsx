@@ -25,11 +25,11 @@ export function LoginPage() {
         authenticationUser(new AuthenticationData(login, password))
     }
 
-    return <div id="login" className="container-fluid">
-        <img className="back-img" src={back} alt=""/>
-        <div className="login-box col-8">
-            <div className="login-back">
-                <h1>Login</h1>
+    return <div id="login" className="container-fluid p-0 overflow-hidden overflow-y-hidden">
+        {/*<img className="back-img" src={back} alt=""/>*/}
+        <div className="login-box px-5 pt-5 pb-4 row">
+            <div className="login-back container">
+                <h2 className="mt-3 mb-4">Вход</h2>
                 <Form>
                     <Form.Group className="mb-3 shadow-none no-border br-36" controlId="formBasicEmail">
                         <Form.Control className="form-control text-field shadow-none no-border" type="text" placeholder="Enter email" value={login}
@@ -42,7 +42,7 @@ export function LoginPage() {
                     </Form.Group>
 
                     <button
-                        className="mt-5 align-items-center hstack align-items-center hstack m-0 p-3 bg-fio br-36 align-items-center mx-auto"
+                        className="mt-5 mb-4 align-items-center hstack align-items-center hstack m-0 p-3 bg-fio br-36 align-items-center mx-auto"
                         onClick={loginUser}>
                         <div className="icon-box bg-white">
                             <img src={go} alt=""/>
